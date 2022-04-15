@@ -1,10 +1,5 @@
 @charset "utf-8";
 
-html {
-    box-sizing: border-box;
-    -ms-overflow-style: scrollbar;
-}
-
 ::-webkit-scrollbar {
     /* 스크롤바 스타일. 크롬에만 적용됨. 다른 브라우저에서도 되게 하려면 별도 작업 필요 */
     width: 7px;
@@ -15,12 +10,43 @@ html {
     background: #666;
 }
 
+::selection {
+    background: #00b6c2;
+    color: white;
+}
+
+html {
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+}
+
 body,
 input,
 textarea,
 select {
     font-size: 14px;
     font-family: 'Noto Sans KR', 맑은 고딕, 돋움, malgun gothic, dotum, AppleGothic, Helvetica, sans-serif;
+    *word-break: break-all;
+    -ms-word-wrap: break-all;
+    white-space: normal;
+    word-break: break-all;
+    letter-spacing: -0.5px;
+}
+
+input {
+    font-size: 13px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.t-c {
+    text-align: center;
+}
+
+.t-r {
+    text-align: right;
 }
 
 .bg--gray {
@@ -271,5 +297,148 @@ select {
 #conts h1 {
     padding: 24px 24px 16px;
     font-size: 22px;
+    letter-spacing: -1px;
+}
+
+#conts h1 strong {
+    font-weight: 700;
+}
+
+.btn--profile {
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
+    overflow: hidden;
+}
+
+.btn--alarm {
+    background: url(../images/icons/ic_snb.png) no-repeat;
+    background-position: -43px -43px;
+    border-radius: 4px;
+}
+
+.btn--alarm:hover {
+    background-color: #eee;
+}
+
+#nav--right {
+    position: absolute;
+    top: 12px;
+    right: 24px;
+}
+
+#nav--right button {
+    vertical-align: middle;
+}
+
+#nav--right button:not(:last-of-type) {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+}
+
+.btn--alarm {
+    position: relative;
+}
+
+.btn--alarm span {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    display: block;
+    width: 16px;
+    line-height: 16px;
+    border-radius: 50%;
+    background-color: red;
+    color: #fff;
+    font-size: 12px;
+}
+
+.form--srch {
+    position: absolute;
+    top: 12px;
+    right: 120px;
+}
+
+.form--srch input {
+    width: 124px;
+    border: 1px solid #ddd;
+    height: 32px;
+    padding-left: 10px;
+    padding-right: 32px;
+    background: none;
+}
+
+.form--srch:hover input {
+    border-color: #00a1b9;
+}
+
+.form--srch input::placeholder {
+    color: #999;
+}
+
+.form--srch button[type=submit] {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: block;
+    background: url(../images/icons/ic_gnb.png) no-repeat -483px -661px;
+    width: 27px;
+    height: 27px;
+}
+
+#main .row {
+    padding: 24px 24px 60px;
+}
+
+#main .row>div>section {
+    min-height: 50px;
+    padding: 16px 24px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    font-size: 13px;
+    border-radius: 6px;
+    box-shadow: 0 4px 14px 0 rgb(168 184 201 / 10%);
+}
+
+@media screen and (min-width: 1201px) {
+    #main .row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #main .row>div:nth-child(1) {
+        width: 28.5%;
+    }
+
+    #main .row>div:nth-child(2) {
+        width: 36.5%;
+    }
+
+    #main .row>div:nth-child(3) {
+        width: 32.5%;
+    }
+}
+
+#main .row>div>section>h2 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: 500;
+    color: #3b3b3b;
+    letter-spacing: -1px;
+}
+
+.figure--profile {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 20px auto 10px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.figure--profile+h2 {
+    font-size: 20px !important;
     letter-spacing: -1px;
 }
